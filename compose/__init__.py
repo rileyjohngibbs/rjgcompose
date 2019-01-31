@@ -1,12 +1,8 @@
-class NO_INITIAL:
-    pass
-
-
-def compose(initial=NO_INITIAL, *funcs):
-    if initial == NO_INITIAL:
+def compose(*funcs, **kwargs):
+    if "initial" not in kwargs:
         return reduce(simple_compose, funcs, identity)
     else:
-        return reduce(simple_compose, funcs, identity)(initial)
+        return reduce(simple_compose, funcs, identity)(kwargs["initial"])
 
 
 def simple_compose(f, g):
