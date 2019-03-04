@@ -1,6 +1,6 @@
-from distutils.core import setup
+import setuptools
 
-setup(
+setuptools.setup(
     name='RJGCompose',
     version='1.2',
     packages=['compose']
